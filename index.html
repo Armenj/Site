@@ -1,0 +1,313 @@
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta http-equiv="refresh" content="600">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="robots" content="noindex, nofollow" />
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+		integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<title>Рабочий стол</title>
+</head>
+
+<body style="background-color:rgb(3, 3, 3);">
+
+	<script>
+		function reloadPage() {
+			location.reload(true);
+		}
+
+		function searchj(event) {
+			event.preventDefault();
+			let findBy = document.getElementById("searchFormJira").elements["searchItem"].value;
+			let url1 = "https://jira.366.ru/issues/?jql=text ~ \"" + findBy + "\"";
+			window.location.href = url1;
+		}
+
+		function searchc(event) {
+			event.preventDefault();
+			let findBy = document.getElementById("searchFormConf").elements["searchItem"].value;
+			let url1 = "https://conf.366.ru/dosearchsite.action?queryString=" + findBy;
+			window.location.href = url1;
+		}
+	</script>
+
+	<nav class="navbar navbar-expand-lg navbar-dark  bg-darkt ml-1">
+		<img src="https://home.qa-team.ru/_img/SAP-Hybris-white-Logo.png" alt class="img-responsive rounded float-left"
+			height=auto width="200" onclick="reloadPage();">
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+				class="navbar-toggler-icon"></span></button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item dropdown"><a class="nav-link dropdown-toggle ml-2" href="#" id="navbarDropdown"
+						role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						Проекты</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item"
+							href="https://jira.366.ru/secure/RapidBoard.jspa?rapidView=75&projectKey=WGZ"
+							target="_blank">WGZ</a>
+						<a class="dropdown-item"
+							href="https://jira.366.ru/secure/RapidBoard.jspa?rapidView=163&projectKey=W36"
+							target="_blank">W36</a>
+						<a class="dropdown-item"
+							href="https://jira.366.ru/secure/RapidBoard.jspa?rapidView=147&projectKey=ESEO"
+							target="_blank">ESEO</a>
+						<a class="dropdown-item"
+							href="https://jira.366.ru/secure/RapidBoard.jspa?rapidView=120&projectKey=HYB"
+							target="_blank">HYB</a>
+						<a class="dropdown-item" href="https://conf.366.ru/pages/viewpage.action?pageId=21336648"
+							target="_blank">Confluence</a>
+				</li>
+				</li>
+
+				<li class="nav-item "><a class="nav-link" href="http://10.250.212.40/search" target="_blank"
+						rel="noopener noreferrer">GrayLog<span class="sr-only">(current)</span></a></li>
+				<li class="nav-item "><a class="nav-link" href="https://git.366.ru/projects/SH/repos/hybris/browse"
+						target="_blank" rel="noopener noreferrer">Bitbucket<span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item "><a class="nav-link" href="http://192.168.238.208:8080/" target="_blank"
+						rel="noopener noreferrer">Jenkins <span class="sr-only">(current)</span></a></li>
+				<li class="nav-item "><a class="nav-link" href="https://sd.366.ru/login" target="_blank"
+						rel="noopener noreferrer">IntraService<span class="sr-only">(current)</span></a></li>
+				<li class="nav-item "><a class="nav-link"
+						href="https://10.250.243.44/zabbix.php?action=dashboard.view&dashboardid=4" target="_blank"
+						rel="noopener noreferrer">Zabbix<span class="sr-only">(current)</span></a></li>
+				<li class="nav-item "><a class="nav-link" href="https://app.qase.io/project/A366" target="_blank"
+						rel="noopener noreferrer">Qase<span class="sr-only">(current)</span></a></li>
+			</ul>
+
+			<form class="form-inline my-2 my-lg-0" id="searchFormJira">
+				<div class="input-group">
+					<input type="text" class="form-control" id="searchItem" placeholder="Поиск в Jira" aria-label="Jira"
+						aria-describedby="button-addon2">
+
+					<div class="input-group-append">
+						<button class="btn btn-outline-success mr-2" type="button" id="button-addon2"
+							onclick="searchj(event);" target="_blank">Найти</button>
+					</div>
+				</div>
+			</form>
+
+			<form class="form-inline my-2 my-lg-0" id="searchFormConf">
+				<div class="input-group" style="align-items: center;">
+					<input type="text" class="form-control" id="searchItem" placeholder="Поиск в Confluence"
+						aria-label="Confluence" aria-describedby="button-addon2">
+
+					<div class="input-group-append mr-2">
+						<button class="btn btn-outline-primary mr-2" type="button" id="button-addon2"
+							onclick="searchc(event);" target="_blank">Найти</button>
+					</div>
+				</div>
+			</form>
+
+			<ul class="navbar-nav">
+				<li class="nav-item "><a class="nav-link" style="display: none;"
+						href="https://docs.google.com/spreadsheets/d/19adrxygTeoi6xr_3P5Vhs6e-VE7uo1W3ofCv2M0IfoY/edit#gid=0"
+						target="_blank">Дежурные <span class="sr-only">(current)</span></a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<p style="background-color:rgb(3, 3, 3);">
+		<img src="https://home.qa-team.ru/_img/1200px-Apteka_36_6.png" alt=""
+			class="position-fixed  fixed-top img-responsive rounded float-left ml-1 mt-1" height="auto" width="10"
+			onclick="reloadPage();">
+	<div class="container" align="center">
+		<div class="row">
+
+			<div class="col-sm">
+				<div class="card mb-4 shadow-sm">
+					<div class="card-header" id="stg">Stage</div>
+					<div class="card-body">
+						<p class="card-text">Внешний доступ</p>
+						<a href="https://hybris-stage.gorzdrav.org/" class="btn btn-primary mb-1" target="_blank">GZ</a>
+						<a href="https://hybris-stage.366.ru" class="btn btn-primary mb-1" target="_blank">366</a>
+						<a href="https://hybris-stage.apteka366.ru" class="btn btn-primary mb-1"
+							target="_blank">apteka366</a>
+						<a href="https://stg-hybris-app-01.id-soft.network:9002/backoffice/"
+							class="btn btn-primary mb-1" target="_blank">BO</a>
+						<a href="https://10.250.209.125:9002/hac/login.jsp"
+						   class="btn btn-primary mb-1" target="_blank">HAC</a>
+						<hr>
+						<p class="card-text">Доступ по IP(back01)</p>
+						<a href="https://10.250.209.125:9002/?site=gorzdrav" class="btn btn-primary mb-1 me-btn mb-1"
+							target="_blank">GZ</a>
+						<a href="https://10.250.209.125:9002/?site=ave" class="btn btn-primary mb-1 me-btn mb-1"
+							target="_blank">366</a>
+						<a href="https://10.250.209.125:9002/?site=apteka366" class="btn btn-primary mb-1 me-btn mb-1"
+							target="_blank">apteka366</a>
+						<a href="https://10.250.209.125:9002/backoffice/login.zul"
+							class="btn btn-primary mb-1 me-btn mb-1" target="_blank">BO</a>
+						<hr>
+						<a href="http://10.250.209.127:8983/solr/" class="btn btn-outline-primary mb-1"
+							target="_blank">SOLR</a>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="col-sm">
+				<div class="card mb-4 shadow-sm">
+
+					<div class="card-header" id="prod">Stage 2</div>
+					<div class="card-body">
+						<p class="card-text">Внешний доступ</p>
+						<a href="https://stg2.gorzdrav.org" class="btn btn-primary mb-1" target="_blank">GZ</a>
+						<a href="https://stg2.366.ru/" class="btn btn-primary mb-1" target="_blank">366</a>
+						<a href="https://stg2.apteka366.ru" class="btn btn-primary mb-1" target="_blank">apteka366</a>
+						<a href="https://10.250.209.162:9002/backoffice" class="btn btn-primary mb-1"
+							target="_blank">BO</a>
+						<a href="https://10.250.209.162:9002/hac/login.jsp" class="btn btn-primary mb-1"
+						   target="_blank">HAC</a>
+						<hr>
+						<p class="card-text">Доступ по IP(app02)</p>
+						<a href="https://10.250.209.162:9002/?site=gorzdrav" class="btn btn-primary mb-1 me-btn mb-1"
+							target="_blank">GZ</a>
+						<a href="https://10.250.209.162:9002/?site=ave" class="btn btn-primary mb-1 me-btn mb-1"
+							target="_blank">366</a>
+						<a href="https://10.250.209.162:9002/?site=apteka366" class="btn btn-primary mb-1 me-btn mb-1"
+							target="_blank">apteka366</a>
+						<a href="https://10.250.209.162:9002/backoffice" class="btn btn-primary mb-1 me-btn mb-1"
+							target="_blank">BO</a>
+						<hr>
+						<a href="http://10.250.209.165:8983/solr/" class="btn btn-outline-primary mb-1"
+							target="_blank">SOLR</a>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+
+		<div class="row">
+
+			<div class="col-sm">
+				<!-- stg3 -->
+				<div class="card mb-4 shadow-sm">
+
+					<div class="card-header" id="prod">Stage 3</div>
+					<div class="card-body">
+						<p class="card-text">Внешний доступ</p>
+						<a href="https://stg3.gorzdrav.org" class="btn btn-primary mb-1" target="_blank">GZ</a>
+						<a href="https://stg3.366.ru/" class="btn btn-primary mb-1" target="_blank">366</a>
+						<a href="https://stg3.apteka366.ru" class="btn btn-primary mb-1" target="_blank">apteka366</a>
+						<a href="https://10.250.209.167:9002/backoffice" class="btn btn-primary mb-1"
+							target="_blank">BO</a>
+						<a href="https://10.250.209.167:9002/hac/login.jsp" class="btn btn-primary mb-1"
+						   target="_blank">HAC</a>
+						<hr>
+						<p class="card-text">Доступ по IP(app02)</p>
+						<a href="https://10.250.209.167:9002/?site=gorzdrav" class="btn btn-primary mb-1 me-btn mb-1"
+							target="_blank">GZ</a>
+						<a href="https://10.250.209.167:9002/?site=ave" class="btn btn-primary mb-1 me-btn mb-1"
+							target="_blank">366</a>
+						<a href="https://10.250.209.167:9002/?site=apteka366" class="btn btn-primary mb-1 me-btn mb-1"
+							target="_blank">apteka366</a>
+						<a href="https://10.250.209.167:9002/backoffice" class="btn btn-primary mb-1 me-btn mb-1"
+							target="_blank">BO</a>
+						<hr>
+						<a href="" class="btn btn-outline-primary mb-1" target="_blank">SOLR</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm">
+				<div class="card mb-4 shadow-sm">
+
+					<div class="card-header" id="prod">Stage 4 </div>
+					<div class="card-body">
+						<p class="card-text">Внешний доступ</p>
+						<a href="https://hybris-stage4.gorzdrav.org" class="btn btn-primary mb-1" target="_blank">GZ</a>
+						<a href="https://hybris-stage4.366.ru" class="btn btn-primary mb-1" target="_blank">366</a>
+						<a href="https://hybris-stage4.apteka366.ru" class="btn btn-primary mb-1"
+							target="_blank">apteka366</a>
+						<a href="https://10.250.209.190:9002/backoffice" class="btn btn-primary mb-1"
+							target="_blank">BO</a>
+						<a href="https://10.250.209.190:9002/hac/login.jsp" class="btn btn-primary mb-1"
+						   target="_blank">HAC</a>
+						<hr>
+						<p class="card-text">Доступ по IP(app01)</p>
+						<a href="https://10.250.209.190:9002/?site=gorzdrav" class="btn btn-primary mb-1 me-btn mb-1"
+							target="_blank">GZ</a>
+						<a href="https://10.250.209.190:9002/?site=ave" class="btn btn-primary mb-1 me-btn mb-1"
+							target="_blank">366</a>
+						<a href="https://10.250.209.190:9002/?site=apteka366" class="btn btn-primary mb-1 me-btn mb-1"
+							target="_blank">apteka366</a>
+						<a href="https://10.250.209.190:9002/backoffice" class="btn btn-primary mb-1 me-btn mb-1"
+							target="_blank">BO</a>
+						<hr>
+						<a href="" class="btn btn-outline-primary mb-1" target="_blank">SOLR</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="row">
+
+			<!-- Прод -->
+			<div class="col-sm">
+				<div class="card mb-4 shadow-sm">
+					<div class="card-header" id="prod">PROD</div>
+					<div class="card-body">
+						<p class="card-text">Внешний доступ</p>
+						<a href="https://www.gorzdrav.org" class="btn btn-primary mb-1" target="_blank">GZ</a>
+						<a href="https://366.ru" class="btn btn-primary mb-1" target="_blank">366</a>
+						<a href="https://apteka366.ru" class="btn btn-primary mb-1" target="_blank">apteka366</a>
+						<a href="https://prd-hybris-back.id-soft.network/backoffice" class="btn btn-primary mb-1"
+							target="_blank">BO</a>
+						<hr>
+						<p class="card-text">Доступ по IP(back01)</p>
+						<a href="https://10.250.209.145:9002/?site=gorzdrav" class="btn btn-primary mb-1 me-btn mb-1"
+							target="_blank">GZ</a>
+						<a href="https://10.250.209.145:9002/?site=ave" class="btn btn-primary mb-1 me-btn mb-1"
+							target="_blank">366</a>
+						<a href="https://10.250.209.145:9002/?site=apteka366" class="btn btn-primary mb-1 me-btn mb-1"
+							target="_blank">apteka366</a>
+						<a href="https://10.250.209.145:9002/backoffice/login.zul"
+							class="btn btn-primary mb-1 me-btn mb-1" target="_blank">BO</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm"></div>
+		</div>
+
+	</div>
+	</p>
+
+	<div class="position-fixed fixed-bottom btn-group dropup">
+		<span>
+			<button type="button" class="btn btn-default dropdown-toggle " data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="false">
+				<span class="caret"></span>
+				<span class="sr-only">Toggle Dropdown</span>
+			</button>
+			<ul class="dropdown-menu">
+				<!-- Dropdown menu links -->
+				<a class="dropdown-item" href="https://gj.qa-team.ru">GJ</a>
+				<a class="dropdown-item" href="https://366.qa-team.ru">366</a>
+				<a class="dropdown-item" href="https://sl.qa-team.ru">SL</a>
+			</ul>
+		</span>
+	</div>
+
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+		crossorigin="anonymous"></script>
+
+</body>
+
+</html>
